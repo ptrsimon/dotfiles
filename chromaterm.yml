@@ -15,10 +15,6 @@ palette:
   status-7: '#b8bb26'
 
 rules:
-#- description: Numbers
-#  regex: \b(?<!\.)\d+(\.\d+)?(?!\.)\b
-#  color: f.type-1
-
 - description: URL
   regex: |
     (?ix)\b
@@ -62,31 +58,3 @@ rules:
     )\b
   color: f.type-4
   exclusive: true
-
-- description: Size, like 123G 123Gb 123Gib 1.23G 123Gbps
-  regex: (?i)\b\d+(\.\d+)?\s?((([KMGTPEZY](i?B)?)|B)(ps)?)\b
-  color:
-    0: f.type-6
-    2: bold
-  exclusive: true
-
-- description: Generic - Bad
-  regex: (?i)\b(password|abnormal(ly)?|down|los(t|ing)|err(ors?)?|(den(y|ies|ied)?)|reject(ing|ed)?|drop(ped|s)?|(err\-)?disabled?|(timed?\-?out)|fail(s|ed|iure)?|disconnect(ed)?|unreachable|invalid|bad|notconnect|unusable|blk|inaccessible|wrong|collisions?|unsynchronized|mismatch|runts)\b
-  color: f.status-1
-
-- description: Generic - Ambigious bad
-  regex: (?i)\b(no(pe)?|exit(ed)?|reset(t?ing)?|discard(ed|ing)?|block(ed|ing)?|filter(ed|ing)?|stop(p(ed|ing))?|never|bad)\b
-  color: f.status-3
-
-- description: Generic - Not too bad
-  regex: (?i)\b(warnings?)\b
-  color: f.status-4
-
-- description: Generic - Ambigious good
-  regex: (?i)\b(ye(s|ah?|p)?|start(ed|ing)?|running|good)\b
-  color: f.status-6
-
-- description: Generic - Good
-  regex: (?i)\b(up|ok(ay)?|permit(ed|s)?|accept(s|ed)?|enabled?|online|succe((ss(ful|fully)?)|ed(ed)?)?|connect(ed)?|reachable|valid|forwarding|synchronized)\b
-  color: f.status-7
-
